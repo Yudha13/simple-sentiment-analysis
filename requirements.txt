@@ -1,0 +1,13 @@
+##gatau versi mana yg oke tapi kalo error coba cari versi lain 
+flask==2.3.2
+transformers==4.34.0
+torch==2.0.1
+numpy==1.26.4
+typing-extensions==4.7.1
+requests==2.31.0
+filelock==3.12.0
+regex==2023.8.8
+tqdm==4.66.1
+packaging==23.1
+pyyaml==6.0
+

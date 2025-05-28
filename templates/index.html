@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Analisis Sentimen Bahasa Indonesia</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Analisis Sentimen</h1>
+        <form method="POST">
+            <textarea name="text" placeholder="Masukkan teks dalam bahasa Indonesia..." required>{{ result.text if result else '' }}</textarea>
+            <button type="submit">Analisis</button>
+        </form>
+
+        {% if result %}
+        <div class="result">
+            <h2>Hasil Analisis:</h2>
+            <p><strong>Teks:</strong> {{ result.text }}</p>
+            <div class="sentiment {{ result.label }}">
+                Sentimen: <strong>{{ result.label | upper }}</strong>
+            </div>
+            <div class="confidence">
+                <h3>Detail:</h3>
+                <ul>
+                    <li>Sangat Negatif: {{ (result.confidences['very negative'] * 100) | round(2) }}%</li>
+                    <li>Negatif: {{ (result.confidences['negative'] * 100) | round(2) }}%</li>
+                    <li>Netral: {{ (result.confidences['neutral'] * 100) | round(2) }}%</li>
+                    <li>Positif: {{ (result.confidences['positive'] * 100) | round(2) }}%</li>
+                    <li>Sangat Positif: {{ (result.confidences['very positive'] * 100) | round(2) }}%</li>
+                </ul>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>

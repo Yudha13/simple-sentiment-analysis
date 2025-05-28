@@ -11,16 +11,19 @@ Aplikasi web sederhana untuk analisis sentimen teks berbahasa Indonesia mengguna
 
 ```bash
 # 1. Clone repository
-git clone https://github.com/username/nama-repo.git
-cd nama-repo
+git clone https://github.com/Yudha13/simple-sentiment-analysis.git
+cd simple-sentiment-analysis
 
-# 2. Install dependencies
+# 2. aktifkan virtual enviroment
+python3 -m venv .venv
+
+# 3. Install dependencies
 pip install -r requirements.txt
 
-# 3. Jalankan aplikasi
+# 4. Jalankan aplikasi
 python3 app.py
 
-# 4. Buka browser ke:
+# 5. Buka browser ke:
 http://localhost:5000
 ```
 
